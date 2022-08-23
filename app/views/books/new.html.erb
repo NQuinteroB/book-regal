@@ -1,0 +1,23 @@
+<h1>Create your book</h1>
+<%= simple_form_for [@book] do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :title,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "title" } %>
+  <%= f.input :book_category,
+                  required: true,
+                  autofocus: true,
+                  input_html: { autocomplete: "book_category" } %>
+  <%= f.input :language,
+                    required: true,
+                    autofocus: true,
+                    input_html: { autocomplete: "language" } %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Create" %>
+  </div>
+<% end %>

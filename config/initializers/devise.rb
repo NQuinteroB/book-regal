@@ -14,7 +14,7 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = '4ba4334fa2384ba068c55c7a7b3ae0c2c454b5df8ecbe48701f4c065fd1d9ad16e429a9e793daa340312bf27ca20ef6930f9178c91d49d8c8bd883e7983bcb93'
+  # config.secret_key = '67dd4c62f115c97e2011bb58d0482b51e8485e79d6a802fe86fd552f8c58a6003f6e500cd8bc0d61a9e7fa7554347debe9606081c4fc7d5b95e1f22b6a2ed9e8'
 
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
@@ -24,7 +24,7 @@ Devise.setup do |config|
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
-  # config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
+  config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
@@ -126,7 +126,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 12
 
   # Set up a pepper to generate the hashed password.
-  # config.pepper = '80e9831df1838e871fc901dc4f51446c93f563d1bfa3393d200d99046a587ecc94cb8e08f6335a85aed8b0d292b13eb6ba85fb8980a44059d0331db47b210463'
+  # config.pepper = '988517feebeadf0b58508b77684a78159c8e0539a1dd391e4569af27529d0bc0eb593e348cbd0525a0c7617c97379bc18302f00c2a30d5ba731e71f46df06fb5'
 
   # Send a notification to the original email when the user's email is changed.
   # config.send_email_changed_notification = false
@@ -302,7 +302,7 @@ Devise.setup do |config|
   # ActiveSupport.on_load(:devise_failure_app) do
   #   include Turbolinks::Controller
   # end
-
+  config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
   # ==> Configuration for :registerable
 
   # When set to false, does not sign a user in automatically after their password is
