@@ -1,8 +1,14 @@
 <h1>Hola natalia</h1>
+
+
 <%= @book.title %>
 <%= @book.book_category %>
+
+
+<%= cl_image_tag @book.photo.key, height: 300, width: 400, crop: :fill %>
 
 <%= link_to "Delete",
   book_path(@book),
   data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
 %>
+
