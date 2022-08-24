@@ -3,3 +3,5 @@
 <% @bookings.each do |booking| %>
   <h4><%= link_to booking.start_time, booking_path(booking) %></h4>
 <% end %>
+
+<%= cl_image_tag("mpyg2072i73iwhieclto", width: 400, height: 300, crop: :fill) %>
