@@ -1,0 +1,38 @@
+<div class="container">
+  <h1>Welcome <%= current_user.first_name %></h1>
+  <br>
+  <h2>Current books</h2>
+  <br>
+  <%# <><%= @books %></h2>
+  <div class="d-flex align-items-center">
+    <ul style="list-style-type: none">
+        <% @books1.each do |book| %>
+        <li style="display: inline; margin-left: 40px;">
+        <% if book.photo.attached? %>
+          <%= cl_image_tag book.photo.key, height: 200, width: 150, crop: :fill %>
+        <% else %>
+          <%= book.title %>
+        <% end %>
+        </li>
+        <%end%>
+    </ul>
+  </div>
+
+  <h2>Your have lended this books...</h2>
+  <div class="d-flex align-items-center">
+    <ul style="list-style-type: none">
+        <% @books2.each do |book| %>
+        <li style="display: inline; margin-left: 40px;">
+        <% if book.photo.attached? %>
+          <%= cl_image_tag book.photo.key, height: 200, width: 150, crop: :fill %>
+        <% else %>
+          <%= book.title %>
+        <% end %>
+        </li>
+        <%end%>
+    </ul>
+  </div>
+
+</div>
+
+<%# <p>Find me in app/views/pages/home.html.erb</p> %>

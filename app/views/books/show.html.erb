@@ -1,14 +1,20 @@
-<h1>Hola natalia</h1>
+<h1 style="margin-left: 50px;">Books details</h1>
+
+<div class="d-flex" style="margin-left: 50px;">
+  <%= cl_image_tag @book.photo.key, height: 200, width: 150, crop: :fill %>
+</div>
+
+<div style="margin-left: 50px;">
+  <h4 style="margin-top: 12px;">Title: <%= @book.title %></h4>
+  <h5 style="margin-top: 6px;">Book category: <%= @book.book_category %></h5>
 
 
-<%= @book.title %>
-<%= @book.book_category %>
+  <%= link_to "Add review", new_book_review_path(@book)%>
+  <%= link_to "Add booking", new_book_booking_path(@book)%>
+  <%= link_to "Delete",
+    book_path(@book),
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+  %>
 
 
-<%= cl_image_tag @book.photo.key, height: 300, width: 400, crop: :fill %>
-
-<%= link_to "Delete",
-  book_path(@book),
-  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-%>
-
+</div>
