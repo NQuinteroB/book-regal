@@ -11,8 +11,14 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
   resources :books do
+review-controller
     resources :reviews, only: %i[index new create]
   end
 
   resources :reviews, only: %i[show destroy]
+    resources :bookings, only: %i[index new create]
+  end
+
+  resources :bookings, only: %i[show destroy]
+master
 end
