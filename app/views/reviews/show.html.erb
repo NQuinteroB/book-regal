@@ -1,0 +1,9 @@
+<h1>Here are your reviews!</h1>
+
+<h2>Reviews:</h2>
+<h4><%= @review.content %></h4>
+
+<%= link_to "Delete",
+  review_path(@review),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+%>
