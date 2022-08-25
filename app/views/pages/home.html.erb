@@ -1,39 +1,282 @@
-<div class="container">
-  <h1>Welcome <%= current_user.first_name %></h1>
-  <br>
-  <h2>Your rented books</h2>
-  <br>
-  <%# <><%= @books %></h2>
-  <div class="d-flex align-items-center">
-    <ul style="list-style-type: none">
+<div class="container text-center ">
+  <div data-aos="zoom-out-up">
+    <h1>Welcome <%= current_user.first_name %></h1>
+  </div>
+</div>
+<div class="container text-center ">
+  <div data-aos="zoom-in-right">
+    <h2>Your rented books</h2>
+  </div>
+  <div class="row ">
+    <div class="col  d-flex justify-content-between ">
+      <% @books1.each do |book| %>
+        <div class="card mb-2">
+          <% if book.photo.attached? %>
+            <%= cl_image_tag book.photo.key, height: 200, width: 150, crop: :fill %>
+          
+              <p><%= link_to "Read more", book_path(book)%></p> 
+          
+          <% else %>
+            <%= book.title %>
+          <% end %>
+        </div>
+      <%end%>
+    </div>
+    <div class="mt-2">
+      <h2>Recommended Books</h2>
+      <div class="col  d-flex justify-content-between mb-4">
+        <% @books2.each do |book| %>
+        <div class="card mb-2">
+          <% if book.photo.attached? %>
+            <%= cl_image_tag book.photo.key, height: 200, width: 150, crop: :fill %>
+            <p><%= link_to "Read more", book_path(book)%></p> 
+          <% else %>
+            <%= book.title %>
+          <% end %>
+          </div>
+        <%end%>
+      </div>
+    </div>
+  </div>
+<div data-aos="fade-up">
+    <div class="row ">
+      <div class="col  d-flex justify-content-between">
+          <% @books1.each do |book| %>
+          <div class="card mb-2">
+              <% if book.photo.attached? %>
+                <%= cl_image_tag book.photo.key, height: 200, width: 150, crop: :fill %>
+                <p><%= link_to "Read more", book_path(book)%></p> 
+              <% else %>
+                <%= book.title %>
+              <% end %>
+            </div>
+          <%end%>
+     </div>
+      <div class="mt-4">
+        <h2>Magic Books</h2>
+        <div class="col  d-flex justify-content-between mb-4">
+              <% @books2.each do |book| %>
+              <div class="card mb-2">
+                  <% if book.photo.attached? %>
+                    <%= cl_image_tag book.photo.key, height: 200, width: 150, crop: :fill %>
+                    <p><%= link_to "Read more", book_path(book)%></p> 
+                  <% else %>
+                    <%= book.title %>
+                  <% end %>
+                </div>
+              <%end%>
+        </div>
+      </div>
+   </div>
+
+
+ </div>
+
+
+
+
+
+<div data-aos="fade-right"
+     data-aos-offset="300"
+     data-aos-easing="ease-in-sine">
+
+   
+<div class="row ">
+      <div class="col  d-flex justify-content-between">
+
         <% @books1.each do |book| %>
-          <li style="display: inline; margin-left: 40px;">
+         <div class="card mb-2">
             <% if book.photo.attached? %>
               <%= cl_image_tag book.photo.key, height: 200, width: 150, crop: :fill %>
+              <p><%= link_to "Read more", book_path(book)%></p> 
             <% else %>
               <%= book.title %>
             <% end %>
-          </li>
+      </div>
         <%end%>
-    </ul>
+
   </div>
 
-  <h2>Books lent to your friends</h2>
-  <div class="d-flex align-items-center">
-    <ul style="list-style-type: none">
+<div class="mt-4">
+  <h2>Drama Books</h2>
+  <div class="col  d-flex justify-content-between mb-4">
         <% @books2.each do |book| %>
-          <li style="display: inline; margin-left: 40px;">
+          <div class="card mb-2">
             <% if book.photo.attached? %>
               <%= cl_image_tag book.photo.key, height: 200, width: 150, crop: :fill %>
+              <p><%= link_to "Read more", book_path(book)%></p> 
             <% else %>
               <%= book.title %>
             <% end %>
-          </li>
+</div>
         <%end%>
-    </ul>
   </div>
-<%= link_to "Home", books_path(@book)%>
+  </div>
+
+</div>
 </div>
 
 
-<%# <p>Find me in app/views/pages/home.html.erb</p> %>
+ <div data-aos="fade-left">
+   
+<div class="row ">
+      <div class="col  d-flex justify-content-between">
+        <% @books1.each do |book| %>
+        <div class="card mb-2">
+            <% if book.photo.attached? %>
+              <%= cl_image_tag book.photo.key, height: 200, width: 150, crop: :fill %>
+              <p><%= link_to "Read more", book_path(book)%></p> 
+            <% else %>
+              <%= book.title %>
+            <% end %>
+      </div>
+        <%end%>
+
+  </div>
+
+<div class="mt-4">
+  <h2>Love Books</h2>
+  <div class="col d-flex justify-content-between mb-4">
+        <% @books2.each do |book| %>
+         <div class="card mb-2">
+            <% if book.photo.attached? %>
+              <%= cl_image_tag book.photo.key, height: 200, width: 150, crop: :fill %>
+              <p><%= link_to "Read more", book_path(book)%></p> 
+            <% else %>
+              <%= book.title %>
+            <% end %>
+</div>
+        <%end%>
+</div>
+  </div>
+
+</div>
+</div>
+
+   
+
+
+
+
+
+ <div data-aos="fade-up-right">
+   
+<div class="row ">
+      <div class="col  d-flex justify-content-between">
+        <% @books1.each do |book| %>
+        <div class="card mb-2">
+            <% if book.photo.attached? %>
+              <%= cl_image_tag book.photo.key, height: 200, width: 150, crop: :fill %>
+              <p><%= link_to "Read more", book_path(book)%></p> 
+            <% else %>
+              <%= book.title %>
+            <% end %>
+</div>
+        <%end%>
+
+  </div>
+
+<div class="mt-4">
+  <h2>Kids Lullaby Books</h2>
+  <div class="col  d-flex justify-content-between mb-4">
+        <% @books2.each do |book| %>
+        <div class="card mb-2">
+            <% if book.photo.attached? %>
+              <%= cl_image_tag book.photo.key, height: 200, width: 150, crop: :fill %>
+              <p><%= link_to "Read more", book_path(book)%></p> 
+            <% else %>
+              <%= book.title %>
+            <% end %>
+        </div>
+        <%end%>
+
+  </div>
+
+</div>
+</div>
+
+   
+
+
+
+
+<div data-aos="zoom-in">
+   
+<div class="row ">
+      <div class="col  d-flex justify-content-between">
+
+        <% @books1.each do |book| %>
+        <div class="card mb-2">
+            <% if book.photo.attached? %>
+              <%= cl_image_tag book.photo.key, height: 200, width: 150, crop: :fill %>
+              <p><%= link_to "Read more", book_path(book)%></p> 
+            <% else %>
+              <%= book.title %>
+            <% end %>
+           </div>
+        <%end%>
+
+  </div>
+
+<div class="mt-4">
+  <h2>High reviews Books</h2>
+  <div class="col  d-flex justify-content-between mb-4">
+        <% @books2.each do |book| %>
+          <div class="card mb-2">
+            <% if book.photo.attached? %>
+              <%= cl_image_tag book.photo.key, height: 200, width: 150, crop: :fill %>
+              <p><%= link_to "Read more", book_path(book)%></p> 
+            <% else %>
+              <%= book.title %>
+            <% end %>
+         </div>
+        <%end%>
+
+  </div>
+
+</div>
+</div>
+
+   
+
+
+
+<div data-aos="zoom-in">
+   
+<div class="row ">
+      <div class="col d-flex justify-content-between">
+
+        <% @books1.each do |book| %>
+         <div class="card mb-2">
+            <% if book.photo.attached? %>
+              <%= cl_image_tag book.photo.key, height: 200, width: 150, crop: :fill %>
+              <p><%= link_to "Read more", book_path(book)%></p> 
+            <% else %>
+              <%= book.title %>
+            <% end %>
+      </div>
+        <%end%>
+
+  </div>
+
+<div class="mt-4">
+  <h2>English Books</h2>
+  <div class="col  d-flex justify-content-between mb-4">
+        <% @books2.each do |book| %>
+        <div class="card mb-2">
+            <% if book.photo.attached? %>
+              <%= cl_image_tag book.photo.key, height: 200, width: 150, crop: :fill %>
+              <p><%= link_to "Read more", book_path(book)%></p> 
+            <% else %>
+              <%= book.title %>
+            <% end %>
+        </div>
+        <%end%>
+  </div>
+</div>
+</div>
+
+   
+ </div>
+
+
