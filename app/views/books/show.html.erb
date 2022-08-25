@@ -1,20 +1,27 @@
-<h1 style="margin-left: 50px;">Books details</h1>
-
-<div class="d-flex" style="margin-left: 50px;">
-  <%= cl_image_tag @book.photo.key, height: 200, width: 150, crop: :fill %>
+<div>
+<h1 style="margin-left: 50px; padding: 24px;">Books details</h1>
 </div>
 
-<div style="margin-left: 50px;">
-  <h4 style="margin-top: 12px;">Title: <%= @book.title %></h4>
-  <h5 style="margin-top: 6px;">Book category: <%= @book.book_category %></h5>
-
-
-  <%= link_to "Add review", new_book_review_path(@book)%>
-  <%= link_to "Add booking", new_book_booking_path(@book)%>
-  <%= link_to "Delete",
-    book_path(@book),
-    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-  %>
-
-
-</div>
+  <div class="container d-flex justify-content-center">
+    <%# div image %>
+    <div class="d-flex justify-content-start">
+    <div>
+      <%= cl_image_tag @book.photo.key, height: 400, width: 300, crop: :fill %>
+    </div>
+    <div class="d-flex flex-column mb-3" style="margin-left: 24px;">
+      <%# div 2 book info %>
+      <div>
+        <h4>Title: <%= @book.title %></h4>
+        <h5 style="margin-top: 6px;">Book category:</h5>
+        <%= @book.book_category %>
+      </div>
+    <%# div 3 buttons info %>
+      <div class="d-flex flex-column mb-3 align-items-baseline">
+        <%= link_to "Add a review", new_book_review_path(@book)%>
+        <%= link_to "Book", new_book_booking_path(@book)%>
+        <%= link_to "Delete",
+          book_path(@book),
+          data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
+      </div>
+    </div>
+  </div>
