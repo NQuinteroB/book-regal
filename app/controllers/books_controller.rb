@@ -8,7 +8,7 @@ class BooksController < ApplicationController
       else
         @books = Book.all
       end
-    @markers = @books.geocoded.map do |book|
+    @markers = Book.all.geocoded.map do |book|
       {
         lat: book.latitude,
         lng: book.longitude
