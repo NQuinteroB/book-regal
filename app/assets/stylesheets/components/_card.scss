@@ -1,0 +1,27 @@
+.hello {
+  color: aqua;
+}
+
+.book-card {
+  background-color: rgb(237, 231, 231);
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.books-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap:16px;
+  flex-grow: 1;
+}
+
+.container {
+  display: flex;
+  align-items: start;
+  justify-content: space-around;
+  padding-top: 8px;
+}

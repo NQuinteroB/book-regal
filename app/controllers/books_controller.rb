@@ -3,7 +3,19 @@ class BooksController < ApplicationController
 
   def index
     @books = policy_scope(Book)
+      if params[:query].present?
+        @books = Book.search_by_title_and_category(params[:query])
+      else
+        @books = Book.all
+      end
+    @markers = @books.geocoded.map do |book|
+      {
+        lat: book.latitude,
+        lng: book.longitude
+      }
+    end
   end
+
 
   def show
     authorize @book
