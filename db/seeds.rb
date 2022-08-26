@@ -48,7 +48,8 @@ user3.save!
 book1 = Book.new(
   title: "100 años de soledad",
   book_category: "Novel",
-  language: "Spanish"
+  language: "Spanish",
+  address: "Hohenzollernring 32-34, 50672 Köln"
 )
 book1.user = user1
 book1.photo.attach(io: file100years, filename: "100years.png", content_type: "image/png")
@@ -57,7 +58,8 @@ book1.save!
 book2 = Book.new(
   title: "Out of theatre",
   book_category: "Drama",
-  language: "English"
+  language: "English",
+  address: "Magnusstraße 20 Friesenplatz, Alte Wallgasse, 50672 Köln"
 )
 book2.user = user1
 book2.photo.attach(io: fileouthetre, filename: "fileouthetre.png", content_type: "image/png")
@@ -66,7 +68,8 @@ book2.save!
 book3 = Book.new(
   title: "The boost circuit",
   book_category: "Action",
-  language: "English"
+  language: "English",
+  address: "Rudolfpl. 1, 50674 Köln"
 )
 book3.user = user2
 book3.photo.attach(io: fileBoostCircuit, filename: "boost.png", content_type: "image/png")
@@ -75,7 +78,8 @@ book3.save!
 book4 = Book.new(
   title: "Race after technology",
   book_category: "Knowledge",
-  language: "English"
+  language: "English",
+  address: "Brüsseler Str. 90, 50672 Köln"
 )
 book4.user = user2
 book4.photo.attach(io: fileraceafter, filename: "race.png", content_type: "image/png")
@@ -84,7 +88,8 @@ book4.save!
 book5 = Book.new(
   title: "Harry Potter and the philiosophal stone",
   book_category: "Science Fiction",
-  language: "English"
+  language: "English",
+  address: "Maastrichter Str. 22, 50672 Köln"
 )
 book5.user = user3
 book5.photo.attach(io: fileharrypotter, filename: "harry.png", content_type: "image/png")
@@ -93,7 +98,8 @@ book5.save!
 book6 = Book.new(
   title: "Game of thrones",
   book_category: "Science Fiction",
-  language: "English"
+  language: "English",
+  address: "Aachener Str. 12, 50674 Köln"
 )
 book6.user = user3
 book6.photo.attach(io: filegamethones, filename: "thrones.png", content_type: "image/png")
