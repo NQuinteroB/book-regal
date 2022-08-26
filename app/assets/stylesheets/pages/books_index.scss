@@ -1,0 +1,15 @@
+// .index-container {
+//   display: flex;
+//   align-items: start;
+//   justify-content: space-around;
+//   padding-top: 8px;
+// }
+
+
+.index-container {
+  display: grid;
+  grid-template-columns: 1fr, 1fr, 1fr;
+  grid-gap: 16px;
+  padding-top: 16px;
+  flex-grow: 1;
+}

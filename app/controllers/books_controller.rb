@@ -8,7 +8,7 @@ class BooksController < ApplicationController
       else
         @books = Book.all
       end
-    @markers = Book.all.geocoded.map do |book|
+    @markers = @books.geocoded.map do |book|
       {
         lat: book.latitude,
         lng: book.longitude
@@ -18,6 +18,7 @@ class BooksController < ApplicationController
 
 
   def show
+    @reviews = Review.where(book_id: @book)
     authorize @book
     # Add this line
   end

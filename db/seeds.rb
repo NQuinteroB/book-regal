@@ -7,6 +7,14 @@ fileBoostCircuit = URI.open("https://upload.wikimedia.org/wikipedia/commons/2/2b
 fileraceafter = URI.open("https://upload.wikimedia.org/wikipedia/commons/c/cc/Race_After_Technology_-_Book_Cover.jpg")
 fileharrypotter = URI.open("https://images-na.ssl-images-amazon.com/images/I/81m1s4wIPML.jpg")
 filegamethones = URI.open("https://upload.wikimedia.org/wikipedia/en/thumb/d/dc/A_Song_of_Ice_and_Fire_book_collection_box_set_cover.jpg/220px-A_Song_of_Ice_and_Fire_book_collection_box_set_cover.jpg")
+davinci = URI.open("https://i.weltbild.de/p/der-da-vinci-code-184054651.jpg?v=3&wp=_ads-minzoom2")
+angels = URI.open("https://images-na.ssl-images-amazon.com/images/I/81adkKbGZgL.jpg")
+oneday = URI.open("https://images-na.ssl-images-amazon.com/images/I/61VTNjezzpL.jpg")
+it = URI.open("https://m.media-amazon.com/images/I/41lsFYcB-7S.jpg")
+ann = URI.open("https://i.weltbild.de/p/das-tagebuch-der-anne-frank-072278943.jpg?v=3&wp=_ads-minzoom2")
+sapiens = URI.open("https://images-na.ssl-images-amazon.com/images/I/4124bI5HGlL._SX327_BO1,204,203,200_.jpg")
+puts "h"
+# hugocabret = URI.open("https://assets.thalia.media/img/artikel/e2db1d1d6b39ba23be1380acc91293bb26477f87-00-00.jpeg")
 
 puts "Deleting old Seeds..."
 
@@ -105,14 +113,75 @@ book6.user = user3
 book6.photo.attach(io: filegamethones, filename: "thrones.png", content_type: "image/png")
 book6.save!
 
+book7 = Book.new(
+  title: "The Da Vinci code",
+  book_category: "Crime",
+  language: "English",
+  address: "Bahnhofsvorpl. 1, 50667 Köln"
+)
+book7.user = user3
+book7.photo.attach(io: davinci, filename: "vinci.png", content_type: "image/png")
+book7.save!
+
+book8 = Book.new(
+  title: "Angels and Demons",
+  book_category: "Thriller",
+  language: "English",
+  address: "Tunisstraße, 50668 Köln"
+)
+book8.user = user3
+book8.photo.attach(io: angels, filename: "angels.png", content_type: "image/png")
+book8.save!
+
+book9 = Book.new(
+  title: "One Day",
+  book_category: "Fiction",
+  language: "German",
+  address: "Unter Goldschmied 19-9, 50667 Köln"
+)
+book9.user = user2
+book9.photo.attach(io: oneday, filename: "oneday.png", content_type: "image/png")
+book9.save!
+
+book10 = Book.new(
+  title: "El italiano",
+  book_category: "Fiction",
+  language: "Spanish",
+  address: "Siegburger Str, 50679 Köln"
+)
+book10.user = user2
+book10.photo.attach(io: it, filename: "it.png", content_type: "image/png")
+book10.save!
+
+book11 = Book.new(
+  title: "Anna Frank Tagenbuch",
+  book_category: "Reality",
+  language: "German",
+  address: "Pantaleonswall 8, 50676 Köln"
+)
+book11.user = user1
+book11.photo.attach(io: ann, filename: "ann.png", content_type: "image/png")
+book11.save!
+
+
+book12 = Book.new(
+  title: "Sapiens",
+  book_category: "Reality",
+  language: "German",
+  address: "Christian-Schult-Straße 11, 50823 Köln"
+)
+book11.user = user1
+book11.photo.attach(io: sapiens, filename: "sapiens.png", content_type: "image/png")
+book11.save!
+
 
 puts "Create 3 bookings and reviews..."
 
 review1 = Review.new(
-  content: "Really nice book",
+  content: "It is very well written and the events are told in an agile way, very good ingredients for the narration of a story. However, I didn't like what it tells.",
 )
 review1.user = user1
-review1.book = book1
+review1.book = book7
 review1.save!
 
 booking1 = Booking.new(
@@ -124,10 +193,10 @@ booking1.book = book1
 booking1.save!
 
 review2 = Review.new(
-  content: "Interesting reading",
+  content: "This is a pretty formulaic page turner, a fun quick read. Written at about the level of the average Nancy Drew mystery, it is best appreciated at that level.",
 )
 review2.user = user2
-review2.book = book2
+review2.book = book7
 review2.save!
 
 booking2 = Booking.new(

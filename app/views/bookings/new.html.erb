@@ -1,15 +1,16 @@
-<h1>Create your booking</h1>
-<%= simple_form_for [@book, @booking] do |f| %>
-  <%= f.error_notification %>
+<h1 class="mx-5 mt-3">Create your booking</h1>
 
-  <div class="form-inputs">
-    <%= f.input :start_time, :order => [:month, :day], input_html: { autocomplete: "Starting Date" } %>
-  <%= f.input :end_time, :order => [:month, :day], input_html: { autocomplete: "Ending Date" } %>
-  </div>
-
-  <div class="form-actions">
-   <button class="btn btn-primary"><%= f.button :submit, "Create" %></button>
-   <br>
-    <%= link_to "Home", books_path %>
-  </div>
-<% end %>
+<div class="mx-5 d-flex flex-column">
+  <%= simple_form_for [@book, @booking] do |f| %>
+    <%= f.error_notification %>
+    <div class="form-inputs">
+      <%= f.input :start_time, :order => [:month, :day], input_html: { autocomplete: "Starting Date" } %>
+      <%= f.input :end_time, :order => [:month, :day], input_html: { autocomplete: "Ending Date" } %>
+    </div>
+    <div class="form-actions d-flex" style="color: white;">
+      <button class="btn btn-primary p-1"><%= f.button :submit, "Create booking" %></button>
+      <%= link_to "Home", books_path, {:style=>'color:black; text-decoration: none;',
+      :class=>"btn btn-primary mx-3 d-flex align-items-center justify-content-center"} %>
+    </div>
+  <% end %>
+</div>
