@@ -21,7 +21,7 @@ class BookingsController < ApplicationController
     @booking.book = @book
     authorize @booking
     if @booking.save!
-      redirect_to book_bookings_path, status: :see_other, notice: "Your booking has been added!!"
+      redirect_to book_path(Book.find(params[:book_id])), status: :see_other, notice: "Your booking has been added!!"
     else
       render :new, status: :unprocessable_entity
     end

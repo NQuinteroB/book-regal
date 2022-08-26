@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def home
-    @books1 = Book.first(3)
-    @books2 = Book.last(3)
+    @books1 = Book.where(user_id: current_user)
+    @books2 = Book.where.not(user_id: current_user).first(3)
   end
 end

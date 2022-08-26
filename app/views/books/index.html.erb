@@ -1,4 +1,4 @@
-<div class="search-bar-container mt-3">
+<div class="search-bar-container my-3">
   <%= form_with url: books_path, method: :get, class: "d-flex" do %>
     <%= text_field_tag :query,
       params[:query],
@@ -9,38 +9,17 @@
 <% end %>
 </div>
 
-<div class="text-center font-weight-bold">
-   <h1 class="hello">All Books👇</h1>
+<div class="text-center font-weight-bold border">
+   <h1 class="hello" style="line-height: 2em;">All Books👇</h1>
 </div>
 
-<div class="container">
-  <div class="books-container d-flex flex-md-column">
-      <ul style="list-style-type: none">
-        <div class="books-container">
-          <% @books.each do |book| %>
-            <div class="book-card">
-              <div class="book-card-info w-100 h-100 pt-3 d-flex flex-column">
-                <div class="img mx-auto">
-                  <li style="display: inline;">
-                  <% if book.photo.attached? %>
-                    <%= cl_image_tag book.photo.key, height: 200, width: 150, crop: :fill %>
-                  <% else %>
-                    <%= book.title %>
-                  <% end %>
-                  </li>
-                </div>
-                <div class="h-100 d-flex align-items-center my-auto justify-content-center">
-                  <p class="text-center m-0 py-3">
-                    <%= link_to book.title, book_path(book), {:style=>'color:black; text-decoration: none;'}%>
-                  </p>
-                </div>
-              </div>
-            </div>
-          <%end%>
-        </div>
-      </ul>
+<div class="index-container mr-3">
+  <div class="books-grid mx-4">
+    <% @books.each do |book| %>
+      <%= render partial: "shared/card", locals: {book: book }  %>
+    <%end%>
   </div>
-  <div class="map-container mt-2" data-controller="map"
+  <div class="map-container mt-2 pr-3" data-controller="map"
        data-map-markers-value="<%= @markers.to_json %>"
        data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>

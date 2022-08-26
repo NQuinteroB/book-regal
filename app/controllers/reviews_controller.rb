@@ -21,7 +21,7 @@ class ReviewsController < ApplicationController
     @review.book = @book
     authorize @review
     if @review.save!
-      redirect_to book_reviews_path, status: :see_other, notice: "Your review has been added!!"
+      redirect_to book_path(@book), status: :see_other, notice: "Your review has been added!!"
     else
       render :new, status: :unprocessable_entity
     end
@@ -31,7 +31,7 @@ class ReviewsController < ApplicationController
     authorize @review
     book_id = @review.book_id
     @review.destroy
-    redirect_to book_reviews_path(book_id), status: :see_other, notice: "Your review has been deleted!!"
+    redirect_to book_path(Book.find(params[:book_id])), status: :see_other, notice: "Your review has been deleted!!"
   end
 
   private

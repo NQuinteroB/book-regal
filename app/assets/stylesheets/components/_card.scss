@@ -1,24 +1,35 @@
 .book-card {
   background-color: rgb(237, 231, 231);
   border-radius: 15px;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  box-shadow: rgba(101, 93, 131, 0.35) 0px 5px 15px;
 }
 
+.book-card1 {
+  background-color: rgb(237, 231, 231);
+  border-radius: 15px;
+  box-shadow: rgba(101, 93, 131, 0.35) 0px 5px 15px;
+}
 
-.books-container {
+.book-card:hover {
+  box-shadow: rgba(74, 68, 96, 0.50) 0px 5px 15px;
+  font-weight: bold;
+}
+
+.books-grid {
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
-  flex-grow: 1;
 }
 
-.container {
-  display: flex;
-  align-items: start;
-  justify-content: space-around;
-  padding-top: 8px;
+// .books-grid1 {
+
+//   display: grid;
+
+// }
+
+.book-card-info img {
+  height: 240px;
+  object-fit: cover;
+  margin: 0 16px;
 }
